@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		172DD9371E7B04E000428EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DD9361E7B04E000428EBE /* AppDelegate.swift */; };
+		172DD93C1E7B04E000428EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172DD93A1E7B04E000428EBE /* Main.storyboard */; };
+		172DD93F1E7B04E000428EBE /* TasTonPermis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 172DD93D1E7B04E000428EBE /* TasTonPermis.xcdatamodeld */; };
+		172DD9411E7B04E000428EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172DD9401E7B04E000428EBE /* Assets.xcassets */; };
+		172DD9441E7B04E000428EBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172DD9421E7B04E000428EBE /* LaunchScreen.storyboard */; };
+		172DD94C1E7B071100428EBE /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DD94B1E7B071100428EBE /* HomeController.swift */; };
+		172DD94E1E7B0F7600428EBE /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DD94D1E7B0F7600428EBE /* UserTableViewController.swift */; };
+		172DD9531E7B3FA400428EBE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DD9521E7B3FA400428EBE /* DetailViewController.swift */; };
+		17AFE95D1E7C1D7F008D97F9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		172DD9331E7B04E000428EBE /* TasTonPermis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasTonPermis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		172DD9361E7B04E000428EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		172DD93B1E7B04E000428EBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		172DD93E1E7B04E000428EBE /* TasTonPermis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TasTonPermis.xcdatamodel; sourceTree = "<group>"; };
+		172DD9401E7B04E000428EBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		172DD9431E7B04E000428EBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		172DD9451E7B04E000428EBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		172DD94B1E7B071100428EBE /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		172DD94D1E7B0F7600428EBE /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		172DD9521E7B3FA400428EBE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		172DD9301E7B04E000428EBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		172DD92A1E7B04E000428EBE = {
+			isa = PBXGroup;
+			children = (
+				172DD9351E7B04E000428EBE /* TasTonPermis */,
+				172DD9341E7B04E000428EBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		172DD9341E7B04E000428EBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				172DD9331E7B04E000428EBE /* TasTonPermis.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		172DD9351E7B04E000428EBE /* TasTonPermis */ = {
+			isa = PBXGroup;
+			children = (
+				172DD94B1E7B071100428EBE /* HomeController.swift */,
+				172DD94F1E7B0F8400428EBE /* TableViewController */,
+				172DD9361E7B04E000428EBE /* AppDelegate.swift */,
+				172DD93A1E7B04E000428EBE /* Main.storyboard */,
+				172DD9401E7B04E000428EBE /* Assets.xcassets */,
+				172DD9421E7B04E000428EBE /* LaunchScreen.storyboard */,
+				172DD9451E7B04E000428EBE /* Info.plist */,
+				172DD93D1E7B04E000428EBE /* TasTonPermis.xcdatamodeld */,
+				17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */,
+			);
+			path = TasTonPermis;
+			sourceTree = "<group>";
+		};
+		172DD94F1E7B0F8400428EBE /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				172DD94D1E7B0F7600428EBE /* UserTableViewController.swift */,
+				172DD9521E7B3FA400428EBE /* DetailViewController.swift */,
+			);
+			name = TableViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		172DD9321E7B04E000428EBE /* TasTonPermis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172DD9481E7B04E000428EBE /* Build configuration list for PBXNativeTarget "TasTonPermis" */;
+			buildPhases = (
+				172DD92F1E7B04E000428EBE /* Sources */,
+				172DD9301E7B04E000428EBE /* Frameworks */,
+				172DD9311E7B04E000428EBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TasTonPermis;
+			productName = TasTonPermis;
+			productReference = 172DD9331E7B04E000428EBE /* TasTonPermis.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		172DD92B1E7B04E000428EBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = M2info;
+				TargetAttributes = {
+					172DD9321E7B04E000428EBE = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 172DD92E1E7B04E000428EBE /* Build configuration list for PBXProject "TasTonPermis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 172DD92A1E7B04E000428EBE;
+			productRefGroup = 172DD9341E7B04E000428EBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				172DD9321E7B04E000428EBE /* TasTonPermis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		172DD9311E7B04E000428EBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172DD9441E7B04E000428EBE /* LaunchScreen.storyboard in Resources */,
+				172DD9411E7B04E000428EBE /* Assets.xcassets in Resources */,
+				172DD93C1E7B04E000428EBE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		172DD92F1E7B04E000428EBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172DD94C1E7B071100428EBE /* HomeController.swift in Sources */,
+				172DD93F1E7B04E000428EBE /* TasTonPermis.xcdatamodeld in Sources */,
+				172DD9531E7B3FA400428EBE /* DetailViewController.swift in Sources */,
+				17AFE95D1E7C1D7F008D97F9 /* RegisterViewController.swift in Sources */,
+				172DD94E1E7B0F7600428EBE /* UserTableViewController.swift in Sources */,
+				172DD9371E7B04E000428EBE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		172DD93A1E7B04E000428EBE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				172DD93B1E7B04E000428EBE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		172DD9421E7B04E000428EBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				172DD9431E7B04E000428EBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		172DD9461E7B04E000428EBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		172DD9471E7B04E000428EBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		172DD9491E7B04E000428EBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TasTonPermis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BouyaCoudoux.TasTonPermis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		172DD94A1E7B04E000428EBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TasTonPermis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BouyaCoudoux.TasTonPermis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		172DD92E1E7B04E000428EBE /* Build configuration list for PBXProject "TasTonPermis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172DD9461E7B04E000428EBE /* Debug */,
+				172DD9471E7B04E000428EBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		172DD9481E7B04E000428EBE /* Build configuration list for PBXNativeTarget "TasTonPermis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172DD9491E7B04E000428EBE /* Debug */,
+				172DD94A1E7B04E000428EBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		172DD93D1E7B04E000428EBE /* TasTonPermis.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				172DD93E1E7B04E000428EBE /* TasTonPermis.xcdatamodel */,
+			);
+			currentVersion = 172DD93E1E7B04E000428EBE /* TasTonPermis.xcdatamodel */;
+			path = TasTonPermis.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 172DD92B1E7B04E000428EBE /* Project object */;
+}
