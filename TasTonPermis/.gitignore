@@ -1,0 +1,48 @@
+Last login: Wed Mar 22 14:00:12 on ttys005
+macmini3:~ tp32$ ls
+Desktop		Downloads	Movies		Pictures
+Documents	Library		Music		Public
+macmini3:~ tp32$ cd D
+Desktop/   Documents/ Downloads/ 
+macmini3:~ tp32$ cd Documents/
+macmini3:Documents tp32$ ls
+FirstApp		ResauPermis		Tp
+MyPlayground.playground	TicTacToe		donnees
+Projet_IOS		ToDoList
+macmini3:Documents tp32$ cd Projet_IOS/
+.DS_Store     TasPermisIOS/ a             
+macmini3:Documents tp32$ cd Projet_IOS/TasPermisIOS/
+.git/         TasTonPermis/ 
+macmini3:Documents tp32$ cd Projet_IOS/TasPermisIOS/
+macmini3:TasPermisIOS tp32$ nano
+macmini3:TasPermisIOS tp32$ nano
+
+
+
+
+
+
+  GNU nano 2.0.6                New Buffer                            Modified  
+
+
+xcuserdata
+
+*.xccheckout
+
+*.moved-aside
+
+DerivedData
+
+*.xcuserstate
+
+
+
+
+
+
+
+
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell

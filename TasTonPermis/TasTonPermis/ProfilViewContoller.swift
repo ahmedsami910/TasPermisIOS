@@ -69,7 +69,7 @@ class ProfilViewController: UIViewController {
     }
     
     func putData(_ name: String, _ value: Any){
-        //globalData[name]=value
+        //globalData[name]!=value
     }
     
 }
