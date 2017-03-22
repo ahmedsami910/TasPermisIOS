@@ -16,6 +16,7 @@
 		172DD94E1E7B0F7600428EBE /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DD94D1E7B0F7600428EBE /* UserTableViewController.swift */; };
 		172DD9531E7B3FA400428EBE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DD9521E7B3FA400428EBE /* DetailViewController.swift */; };
 		17AFE95D1E7C1D7F008D97F9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */; };
+		88899A221E819D3C00457585 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88899A211E819D3C00457585 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		172DD94D1E7B0F7600428EBE /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		172DD9521E7B3FA400428EBE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		88899A211E819D3C00457585 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				172DD9451E7B04E000428EBE /* Info.plist */,
 				172DD93D1E7B04E000428EBE /* TasTonPermis.xcdatamodeld */,
 				17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */,
+				88899A211E819D3C00457585 /* LoginManager.swift */,
 			);
 			path = TasTonPermis;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			files = (
 				172DD94C1E7B071100428EBE /* HomeController.swift in Sources */,
 				172DD93F1E7B04E000428EBE /* TasTonPermis.xcdatamodeld in Sources */,
+				88899A221E819D3C00457585 /* LoginManager.swift in Sources */,
 				172DD9531E7B3FA400428EBE /* DetailViewController.swift in Sources */,
 				17AFE95D1E7C1D7F008D97F9 /* RegisterViewController.swift in Sources */,
 				172DD94E1E7B0F7600428EBE /* UserTableViewController.swift in Sources */,
