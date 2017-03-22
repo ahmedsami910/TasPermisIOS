@@ -46,14 +46,16 @@ class UserTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "DetailUser", sender: self)
+        
+        performSegue(withIdentifier: "UserDetail", sender: self)
+        print("ok")
     }
     
     
     //passer en parametre l'identifiant
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("j'envoi l'id")
-        if segue.identifier == "DetailUser" {
+        if segue.identifier == "UserDetail" {
             print("condition 1")
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 print("condition 2")

@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class RegisterViewController: UIViewController,UITextFieldDelegate{
-
+    
     @IBOutlet weak var userRepeatPasswordField: UITextField!
     @IBOutlet weak var userPasswordField: UITextField!
     @IBOutlet weak var userNicknameField: UITextField!
@@ -20,26 +20,41 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var userNameField: UITextField!
     var context:NSManagedObjectContext?
     
+    let dateFormatString = "dd/MM/yyyy"
     var datePickerView : UIDatePicker?
-    var date: Date?
+    var dateOfBirth: Date?
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userRepeatPasswordField.delegate=self
-         userPasswordField.delegate=self
-         userNameField.delegate=self
-         userNicknameField.delegate=self
-         userLastNameField.delegate=self
-         userAgeField.delegate=self
+        userPasswordField.delegate=self
+        userNameField.delegate=self
+        userNicknameField.delegate=self
+        userLastNameField.delegate=self
+        userAgeField.delegate=self
         
         addDatePickerView()
         
+        dateOfBirth = dateFromStr(userAgeField.text!) as Date
         //2
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
              // Do any additional setup after loading the view.
+    }
+    
+    //MARK - Format Date
+    
+    func formatterDate(date: Date) -> String {
+        
+        var dateStr:String?
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = dateFormatString
+        dateStr = dateFormatter.string(from: date)
+        
+        return dateStr!
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,13 +65,23 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
     @IBAction func RegisterBtn(_ sender: Any) {
         
         
-        if(userPasswordField.text == userRepeatPasswordField.text){
+        userAgeField.text="12/10/1991"
+        dateOfBirth = dateFromStr(userAgeField.text!) as Date
         
-        let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!)
         
+        
+       // if( userNicknameField.text !="" && userNameField.text!="" && userLastNameField.text != ""
+            
+        
+            if(userPasswordField.text == userRepeatPasswordField.text  ){
+        
+            let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!)
+
+            
+            
         newUser.setValue(userNameField.text, forKey: "firstname")
         newUser.setValue(userLastNameField.text, forKey: "lastname")
-        newUser.setValue(Int(userAgeField.text!), forKey: "age")
+        newUser.setValue( dateOfBirth, forKey: "age")
         newUser.setValue(userNicknameField.text, forKey: "nickname")
         newUser.setValue(userPasswordField.text, forKey: "password")
             //print("User Ajouté" ,newUser)
@@ -68,17 +93,22 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
             } catch {
                 print("erreur sauvegarde ")
             }
-            
         }else{
         print("Password Doesn't match")
         }
-        
-        
     }
     
-    @IBAction func OnKeyDown(_ sender: Any) {
+    func dateFromStr(_ dateStr: String) -> Date {
+
+        let formatter  = DateFormatter()
+        formatter.dateFormat  = "dd/mm/yyyy"
         
+        return formatter.date(from: dateStr)!
+        
+        //return date
     }
+
+   
     
     func addDatePickerView(){
         datePickerView=UIDatePicker()
@@ -92,7 +122,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
         let dateformatter=DateFormatter()
         dateformatter.dateFormat = "dd/mm/yyy"
         userAgeField.text=dateformatter.string(from:_sender.date)
-        date=_sender.date
+        dateOfBirth=_sender.date
     }
     
     
