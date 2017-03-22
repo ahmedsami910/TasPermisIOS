@@ -1,0 +1,276 @@
+let dateFormatString = "dd/MM/yyyy"
+
+@IBOutlet weak var dateTextField: UITextField!
+@IBOutlet weak var todoTextField: UITextField!
+@IBOutlet weak var ajouterBtn: UIBarButtonItem!
+
+@IBOutlet weak var erreurLabel: UILabel!
+
+@IBOutlet weak var faitSwitch: UISwitch!
+@IBOutlet weak var faitLabel: UILabel!
+
+var context:NSManagedObjectContext?
+var datePickerView:UIDatePicker?
+var dateTodo:Date?
+var isTodoEditing:Bool = false
+var todo:NSDictionary?
+
+
+
+@IBAction func annuler(_ sender: UIBarButtonItem) {
+
+dismiss(animated: true, completion: nil)
+}
+
+@IBAction func ajouterTodo(_ sender: UIBarButtonItem) {
+
+if (todoTextField!.text != "" && dateTodo != nil) {
+ajouterTodoAFaire(todo: todoTextField!.text!, date: dateTodo!)
+dismiss(animated: true, completion: nil)
+} else {
+erreurLabel.text = "remplir champs 'todo' et sélectionner 1 date"
+}
+
+
+}
+
+
+@IBAction func modifierTodo(_ sender: UIBarButtonItem) {
+
+if (todoTextField!.text != "" && dateTodo != nil) {
+modifierTodoExistant(todo: todo?["todo"] as! String, date: dateTodo!)
+self.navigationController?.popViewController(animated: true)
+} else {
+erreurLabel.text = "remplir champs 'todo' et sélectionner 1 date"
+}
+}
+
+
+@IBAction func marquerFait(_ sender: UISwitch) {
+
+marquerTodoFait(todo?["todo"] as! String)
+}
+
+
+//MARK:  - Date Picker View
+
+func AjouterDatePickerView() {
+
+datePickerView = UIDatePicker()
+datePickerView?.datePickerMode = UIDatePickerMode.date
+datePickerView?.addTarget(self, action: #selector(ViewController.selectionDate(_:)), for: .valueChanged)
+
+dateTextField.inputView = datePickerView
+}
+
+
+func selectionDate(_ sender:UIDatePicker) {
+//http://www.codingexplorer.com/swiftly-getting-human-readable-date-nsdateformatter/
+
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat  = dateFormatString
+dateTextField.text = dateFormatter.string(from: sender.date)
+dateTodo = sender.date
+}
+
+//MARK:  - Core Data
+
+//ajouter Todo
+func ajouterTodoAFaire(todo:String, date:Date) {
+
+let nouveauTodo = NSEntityDescription.insertNewObject(forEntityName: "Todo", into: context!)
+
+nouveauTodo.setValue(todo, forKey: "todo")
+nouveauTodo.setValue(date, forKey: "date")
+nouveauTodo.setValue(false, forKey: "estFait")
+
+do {
+try context?.save()
+print("sauvegarde aboutie pour \(nouveauTodo)")
+} catch {
+print("erreur sauvegarder au Model")
+}
+}
+
+//modifier Todo
+func modifierTodoExistant(todo:String, date:Date) {
+
+fetchTodos(todo) { (array, arrayData) in
+
+print(arrayData.value(forKey: "todo"))
+
+arrayData.setValue(todoTextField!.text, forKey: "todo")
+arrayData.setValue(date, forKey: "date")
+
+do {
+try context?.save()
+print("modification aboutie pour \(todo)")
+} catch {
+print("erreur modification au Model")
+}
+}
+
+}
+
+//marquer Fait
+func marquerTodoFait(_ todo:String) {
+
+fetchTodos(todo) { (array, arrayData) in
+
+for resultat in arrayData {
+
+let todoValue = (resultat as AnyObject).value(forKey: "todo")  as? String
+let estFait = (resultat as AnyObject).value(forKey: "estFait") as! Bool
+
+if todo == todoValue {
+
+if estFait {
+(resultat as AnyObject).setValue(false, forKey: "estFait")
+faitSwitch.setOn(false, animated: true)
+
+} else {
+(resultat as AnyObject).setValue(true, forKey: "estFait")
+faitSwitch.setOn(true, animated: true)
+}
+
+
+//sauvegarder
+do {
+try context?.save()
+print("marquer comme fait \(todo)")
+} catch {
+print("erreur modification au Model")
+}
+}
+}
+
+
+
+}
+
+}
+
+func verifierSiFait(_ todo:String) -> Bool {
+
+var isCompleted:Bool?
+
+fetchTodos(todo) { (array, arrayData) in
+
+for resultat in arrayData {
+
+let todoValue = (resultat as AnyObject).value(forKey: "todo")  as? String
+let estFait = (resultat as AnyObject).value(forKey: "estFait") as! Bool
+
+if todo == todoValue {
+
+
+if estFait {
+
+isCompleted = true
+} else {
+
+isCompleted = false
+} //if
+} // if
+
+
+} //for
+
+} // fetch
+
+return isCompleted!
+}
+
+//lire Todo
+func fetchTodos(_ predicate:String, completion :(_ array:NSArray,_ arrayData:NSArray) -> ()) {
+
+var arr = [NSDictionary]()
+var arrData = [NSManagedObject]()
+let requete:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Todo")
+
+//Modifier
+requete.predicate = NSPredicate(format: "todo = %@", predicate)
+
+do {
+
+let resultats = try context!.fetch(requete)
+
+for resultat in resultats {
+
+let todo = (resultat as AnyObject).value(forKey: "todo")
+let date = (resultat as AnyObject).value(forKey: "date")
+let fait = (resultat as AnyObject).value(forKey: "estFait")
+
+let todoDict = ["todo": todo, "date": date, "estFait": fait] as [String:Any]
+
+arr.append(todoDict as NSDictionary)
+arrData.append(resultat as! NSManagedObject)
+}
+
+completion(arr as NSArray, arrData as NSArray)
+
+} catch {
+
+print("erreur requête")
+}
+
+}
+
+
+override func viewDidLoad() {
+super.viewDidLoad()
+// Do any additional setup after loading the view, typically from a nib.
+
+context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+AjouterDatePickerView()
+
+if let todoDisponible = todo?["todo"] as? String {
+faitSwitch.setOn(verifierSiFait(todoDisponible), animated: true)
+}
+
+
+//mode editing = true ou false
+if isTodoEditing {
+
+todoTextField.text = todo?["todo"] as! String?
+dateTextField.text = formatterDate(todo?["date"] as! Date)
+dateTodo = dateFromStr(dateTextField.text!) as Date
+faitLabel.isHidden = false
+faitSwitch.isHidden = false
+faitSwitch.isEnabled = true
+
+} else {
+
+todoTextField.text = ""
+dateTextField.text = ""
+faitLabel.isHidden = true
+faitSwitch.isHidden = true
+faitSwitch.isEnabled = false
+
+}
+}
+
+
+//MARK - Format Date
+
+func formatterDate(_ date:Date) -> String {
+
+var dateStr:String?
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat  = dateFormatString
+dateStr = dateFormatter.string(from: date)
+
+return dateStr!
+}
+
+
+func dateFromStr(_ dateStr: String) -> Date {
+
+let formatter  = DateFormatter()
+formatter.dateFormat  = dateFormatString
+let date = formatter.date(from: dateStr)
+
+return date!
+}
+
