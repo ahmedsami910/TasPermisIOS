@@ -15,19 +15,29 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var userPasswordField: UITextField!
     @IBOutlet weak var userNicknameField: UITextField!
     
-    @IBOutlet weak var userAgeField: UITextField!
+    
     @IBOutlet weak var userLastNameField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
     var context:NSManagedObjectContext?
     
+    //var datePickerView = UIDatePicker()
+    var date: Date?
     let dateFormatString = "dd/MM/yyyy"
     var datePickerView : UIDatePicker?
     var dateOfBirth: Date?
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         userRepeatPasswordField.delegate=self
+         userPasswordField.delegate=self
+         userNameField.delegate=self
+         userNicknameField.delegate=self
+         userLastNameField.delegate=self
+         //userAgeField.delegate=self
+     
+        
+       
         userPasswordField.delegate=self
         userNameField.delegate=self
         userNicknameField.delegate=self
@@ -69,6 +79,11 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
         dateOfBirth = dateFromStr(userAgeField.text!) as Date
         
         
+        let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!)
+ 
+        newUser.setValue(userNameField.text, forKey: "firstname")
+        newUser.setValue(userLastNameField.text, forKey: "lastname")
+        //newUser.setValue(userAgeField.text!, forKey: "age")
         
        // if( userNicknameField.text !="" && userNameField.text!="" && userLastNameField.text != ""
             
@@ -84,8 +99,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
         newUser.setValue( dateOfBirth, forKey: "age")
         newUser.setValue(userNicknameField.text, forKey: "nickname")
         newUser.setValue(userPasswordField.text, forKey: "password")
-            //print("User Ajouté" ,newUser)
-        //newUser.setValue(userFiled, forKey: "age")
+            print("User Ajouté" ,newUser)
             
             do {
                 try context?.save()
@@ -97,6 +111,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
         print("Password Doesn't match")
         }
     }
+
     
     func dateFromStr(_ dateStr: String) -> Date {
 
@@ -146,11 +161,6 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
         return "\(age)"
     }
     
-    
-    
-    
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -158,14 +168,5 @@ class RegisterViewController: UIViewController,UITextFieldDelegate{
     
   
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

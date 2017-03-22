@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class UserTableViewController: UITableViewController{
     
@@ -18,6 +19,11 @@ class UserTableViewController: UITableViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("je suis chargé")
+       //if ( LoginManager.sharedIstance.isLoggedIn == false )
+        
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

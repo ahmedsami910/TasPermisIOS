@@ -19,6 +19,7 @@
 		173EEE431E82A9A60008A60D /* ControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEE421E82A9A60008A60D /* ControllerManager.swift */; };
 		1777E3201E818299002D5A78 /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1777E31F1E818299002D5A78 /* DBController.swift */; };
 		17AFE95D1E7C1D7F008D97F9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */; };
+		88899A221E819D3C00457585 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88899A211E819D3C00457585 /* LoginManager.swift */; };
 		17EB5A291E7D927E009FB191 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EB5A281E7D927E009FB191 /* BookingViewController.swift */; };
 		17EB5A2B1E7DA95D009FB191 /* modelDatePicker in Resources */ = {isa = PBXBuildFile; fileRef = 17EB5A2A1E7DA95D009FB191 /* modelDatePicker */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		173EEE421E82A9A60008A60D /* ControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerManager.swift; sourceTree = "<group>"; };
 		1777E31F1E818299002D5A78 /* DBController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBController.swift; sourceTree = "<group>"; };
 		17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		88899A211E819D3C00457585 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		17EB5A281E7D927E009FB191 /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		17EB5A2A1E7DA95D009FB191 /* modelDatePicker */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = modelDatePicker; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,8 @@
 				172DD9421E7B04E000428EBE /* LaunchScreen.storyboard */,
 				172DD9451E7B04E000428EBE /* Info.plist */,
 				172DD93D1E7B04E000428EBE /* TasTonPermis.xcdatamodeld */,
+				17AFE95C1E7C1D7F008D97F9 /* RegisterViewController.swift */,
+				88899A211E819D3C00457585 /* LoginManager.swift */,
 			);
 			path = TasTonPermis;
 			sourceTree = "<group>";
@@ -174,6 +178,7 @@
 			files = (
 				172DD94C1E7B071100428EBE /* HomeController.swift in Sources */,
 				172DD93F1E7B04E000428EBE /* TasTonPermis.xcdatamodeld in Sources */,
+				88899A221E819D3C00457585 /* LoginManager.swift in Sources */,
 				17EB5A291E7D927E009FB191 /* BookingViewController.swift in Sources */,
 				172DD9531E7B3FA400428EBE /* DetailViewController.swift in Sources */,
 				17AFE95D1E7C1D7F008D97F9 /* RegisterViewController.swift in Sources */,
